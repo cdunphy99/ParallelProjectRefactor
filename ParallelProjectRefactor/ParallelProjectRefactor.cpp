@@ -10,7 +10,7 @@ int found = 0;
 
 string* newStringCreator(string* startingString, int length, char addingChar) {
 	int i;
-
+	// test
 	string* newString = new string[length + 1];
 	for (i = 0; i < length; i++) {
 		newString[i] = startingString[i];
