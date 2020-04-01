@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
 
 	//open file
 	ifstream inFile;
-	inFile.open("C:\\Users\\cdunp\\Documents\\Code\\ParallelProjectRefactor\\Debug\\possibleValuesList1.txt");
+	inFile.open("F:\\Code\\ParallelProjectRefactor\\Debug\\possibleValuesList1.txt");
 	if (!inFile) {
 		printf("Error opening file.\n");
 		return 0;
@@ -94,6 +94,7 @@ int main(int argc, char* argv[]) {
 }
 
 void treeLevelGenerator(int Level, string* wordCheck, int wSize, char* A, int aSize, string** treeLevel, int treeLevelSize) {
+	
 	if (found == 0) {
 		int i, j;
 		if (Level == 1) {
@@ -110,11 +111,10 @@ void treeLevelGenerator(int Level, string* wordCheck, int wSize, char* A, int aS
 			string** newTreeLevel = new string * [sizeof(treeLevel) * aSize + 1];
 			for (i = 0; i < treeLevelSize; i++) {
 				for (j = 0; j < aSize; j++) {
-					newTreeLevel[i][j] = *newStringCreator(treeLevel[i], (wSize - Level + 1), A[j]);
+					newTreeLevel[i][j] = newStringCreator(treeLevel[i], (wSize - Level + 1), A[j]);
 				}
 			}
-			//newTreeLevel[treeLevelSize * aSize + 1] = '\0';
-			free(treeLevel);
+			delete treeLevel;
 			treeLevelGenerator(Level - 1, wordCheck, wSize, A, aSize, newTreeLevel, treeLevelSize * aSize);
 		}
 	}
