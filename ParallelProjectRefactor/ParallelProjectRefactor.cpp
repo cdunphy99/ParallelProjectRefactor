@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 using namespace std;
 #define WORD_LIMIT 5
 int found = 0;
@@ -47,7 +48,7 @@ int main(int argc, char* argv[]) {
 		return 0;
 	}
 	//stores number of values
-	getline(inFile, numOfPosibleValList);
+	inFile >> numOfPosibleValList;
 	getline(inFile, posibleValList);
 	inFile.close();
 
@@ -61,7 +62,7 @@ int main(int argc, char* argv[]) {
 	return 0;
 }
 
-void treeLevelGenerator(int Level, string wordCheck, int wSize, string A, int aSize, string treeLevel[], int treeLevelSize) {
+void treeLevelGenerator(int Level, string wordCheck, int wSize, string A, int aSize, string treeLevel[], int treeLevelSize, string** newTreeLevel) {
 	if (found == 0) {
 		int i, j;
 		if (Level == 1) {
@@ -74,14 +75,14 @@ void treeLevelGenerator(int Level, string wordCheck, int wSize, string A, int aS
 			}
 		}
 		else {
-			//char** newTreeLevel = malloc(sizeof(treeLevel) * aSize + 1);
-			string* newTreeLevel = new string[sizeof(treeLevel) * aSize + 1];
+			string* newTreeLevel = new string [sizeof(treeLevel) * aSize + 1];
+
 			for (i = 0; i < treeLevelSize; i++) {
 				for (j = 0; j < aSize; j++) {
-					char temp = A[j];
-					string temp2 = treeLevel[i];
-
-					newTreeLevel[i][j] = temp + temp2;
+					stringstream tempstream;
+					tempstream << A[j];
+					tempstream << treeLevel[i];
+					newTreeLevel[i][j] = tempstream.str();
 				}
 			}
 			delete (treeLevel);
