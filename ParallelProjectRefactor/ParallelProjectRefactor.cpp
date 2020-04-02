@@ -40,14 +40,15 @@ int main(int argc, char* argv[]) {
 
 	//open file
 	ifstream inFile;
-	inFile.open("C:\\Users\\Michael Foley\\CProgramCode\\passwordGuessor\\possibleValuesList1.txt");
+	//inFile.open("C:\\Users\\Michael Foley\\CProgramCode\\passwordGuessor\\possibleValuesList1.txt");
+	inFile.open("");
 	if (!inFile) {
 		printf("Error opening file.\n");
 		return 0;
 	}
 	//stores number of values
-	inFile.getline >> numOfPosibleValList;
-	inFile.getline >> posibleValList;
+	getline(inFile, numOfPosibleValList);
+	getline(inFile, posibleValList);
 	inFile.close();
 
 	//everything works above

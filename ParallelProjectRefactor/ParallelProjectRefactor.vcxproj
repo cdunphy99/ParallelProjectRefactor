@@ -150,7 +150,7 @@
     <ClCompile Include="ParallelProjectRefactor.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\Debug\possibleValuesList1.txt" />
+    <Text Include="possibleValuesList1.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
