@@ -1,10 +1,9 @@
-// ParallelProjectRefactor.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
+
+#include "wordTree.h"
 using namespace std;
 #define WORD_LIMIT 5
 int found = 0;
@@ -62,6 +61,7 @@ int main(int argc, char* argv[]) {
 	return 0;
 }
 
+// TODO: adapt this code to the new object model, which should make it easier to work with in the way we need
 void treeLevelGenerator(int Level, string wordCheck, int wSize, string A, int aSize, string treeLevel[], int treeLevelSize, string** newTreeLevel) {
 	if (found == 0) {
 		int i, j;

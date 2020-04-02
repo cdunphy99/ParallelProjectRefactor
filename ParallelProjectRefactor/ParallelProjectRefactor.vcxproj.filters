@@ -18,10 +18,18 @@
     <ClCompile Include="ParallelProjectRefactor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="wordTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="possibleValuesList1.txt">
       <Filter>Resource Files</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="wordTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
