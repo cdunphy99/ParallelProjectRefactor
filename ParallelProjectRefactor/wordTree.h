@@ -23,6 +23,7 @@ class wordTree
 {
 public:
 	wordTreeNode* root;
+	
 	wordTreeNode* setRoot(wordTreeNode* newRoot);
 	wordTreeNode* insertNode(std::string newNodeValue, wordTreeNode* parent);
 	wordTreeNode* insertNode(std::string newNodeValue, wordTreeNode* parent, wordTreeNode* leftChild, wordTreeNode* rightChild);
