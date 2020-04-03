@@ -148,9 +148,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ParallelProjectRefactor.cpp" />
+    <ClCompile Include="TreeRow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="possibleValuesList1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TreeRow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
